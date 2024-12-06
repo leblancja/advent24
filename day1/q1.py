@@ -10,13 +10,28 @@ for line in file:
     list1.append(int(left))
     list2.append(int(right))
     
-a = list1.sort()
-b = list2.sort()
+
 
 def part1():
+    a = list1.sort()
+    b = list2.sort()
+
     diff = [abs(a-b) for a, b in zip(list1, list2)]
     res = sum(diff)
+
     print(res)
-    return
+    return res
     
 def part2():
+
+    sims = []
+
+    for num in list1:
+         sims.append(num * (list2.count(num)))
+
+    res = sum(sims)
+    print(res)
+    return res
+
+part1()
+part2()
